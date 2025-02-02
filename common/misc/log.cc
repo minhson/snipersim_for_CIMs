@@ -385,7 +385,9 @@ void Log::mem_trace(const char *format, ...)
    if (_DRAMsim3File == NULL)
    {
       char filename[256];
+      // .trace file is for DRAMsim3
       sprintf(filename, "dramsim3.trace");
+      // .nvt file is for NVMain
       //FIXMEsprintf(filename, "dram.nvt");
       _DRAMsim3File = fopen(formatFileName(filename).c_str(), "w");
       assert(_DRAMsim3File != NULL);
