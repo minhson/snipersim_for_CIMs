@@ -1,0 +1,29 @@
+TARGET = cim-test-bitset
+include ../shared/Makefile.shared
+CXX = g++ 
+CXXFLAGS = -g -O2 -mavx -fopt-info-vec-optimized 
+#CXXFLAGS += -std=c++11 -Wall -Wextra -Werror
+
+$(TARGET): $(TARGET).o 
+	$(CXX) $(CXXFLAGS) $(TARGET).o -lm $(SNIPER_LDFLAGS) -o $(TARGET) 
+
+run_$(TARGET):
+	#FIXME../../run-sniper -n 2 -c gainestown-ambit-ddr4-1866 -d ./out-19-16-ambit-ddr4-1866 --power --roi -- ./cim-test-bitset > 19-16-ambit-ddr4-1866.txt
+	#FIXME../../run-sniper -n 2 -c gainestown-ambit-ddr4-2400 -d ./out-15-16-ambit-ddr4-2400 --power --roi -- ./cim-test-bitset > 15-16-ambit-ddr4-2400.txt
+	#FIXME../../run-sniper -n 2 -c gainestown-ambit-ddr4-3200 -d ./out-19-16-ambit-ddr4-3200 --power --roi -- ./cim-test-bitset > 19-16-ambit-ddr4-3200.txt
+    
+    #FIXME../../run-sniper -n 2 -c gainestown-pipf-ddr4-1866 -d ./out-19-16-pipf-ddr4-1866 --power --roi -- ./cim-test-bitset > 19-16-pipf-ddr4-1866.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-pipf-ddr4-2400 -d ./out-19-16-pipf-ddr4-2400 --power --roi -- ./cim-test-bitset > 19-16-pipf-ddr4-2400.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-pipf-ddr4-3200 -d ./out-19-16-pipf-ddr4-3200 --power --roi -- ./cim-test-bitset > 19-16-pipf-ddr4-3200.txt
+    #FIXME
+    #FIXME../../run-sniper -n 2 -c gainestown-roc-ddr4-1866 -d ./out-19-16-roc-ddr4-1866 --power --roi -- ./cim-test-bitset > 19-16-roc-ddr4-1866.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-roc-ddr4-2400 -d ./out-19-16-roc-ddr4-2400 --power --roi -- ./cim-test-bitset > 19-16-roc-ddr4-2400.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-roc-ddr4-3200 -d ./out-19-16-roc-ddr4-3200 --power --roi -- ./cim-test-bitset > 19-16-roc-ddr4-3200.txt
+ 
+    #FIXME../../run-sniper -n 2 -c gainestown-elp2im-ddr4-1866 -d ./out-19-16-elp2im-ddr4-1866 --power --roi -- ./cim-test-bitset > 19-16-elp2im-ddr4-1866.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-elp2im-ddr4-2400 -d ./out-19-16-elp2im-ddr4-2400 --power --roi -- ./cim-test-bitset > 19-16-elp2im-ddr4-2400.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-elp2im-ddr4-3200 -d ./out-19-16-elp2im-ddr4-3200 --power --roi -- ./cim-test-bitset > 19-16-elp2im-ddr4-3200.txt
+    #FIXME
+    #FIXME../../run-sniper -n 2 -c gainestown-ours-ddr4-1866 -d ./out-19-16-ours-ddr4-1866 --power --roi -- ./cim-test-bitset > 19-16-ours-ddr4-1866.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-ours-ddr4-2400 -d ./out-19-16-ours-ddr4-2400 --power --roi -- ./cim-test-bitset > 19-16-ours-ddr4-2400.txt
+    #FIXME../../run-sniper -n 2 -c gainestown-ours-ddr4-3200 -d ./out-19-16-ours-ddr4-3200 --power --roi -- ./cim-test-bitset > 19-16-ours-ddr4-3200.txt

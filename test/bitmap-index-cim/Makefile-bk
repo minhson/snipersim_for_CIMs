@@ -1,0 +1,25 @@
+TARGET = main-cim
+include ../shared/Makefile.shared
+CXX = g++ 
+#CC = gcc
+#CFLAGS = -g -O2 -std=c99 -pthread -I/home/sonlm/workplace/DRAM-CIM/Ours/fastbit-2.0.3/src
+CXXFLAGS = -g -O2 -std=c++11 -pthread -I/home/sonlm/workplace/DRAM-CIM/Ours/fastbit-2.0.3/src 
+CXXFLAGS += -L/home/sonlm/workplace/DRAM-CIM/Ours/fastbit-2.0.3/src/.libs 
+
+$(TARGET): $(TARGET).o    
+	$(CXX) $(CXXFLAGS) main-cim.cpp -lfastbit -lm $(SNIPER_LDFLAGS) -o $(TARGET) 
+
+#ibis.o: ibis.cpp
+#	$(CXX) $(CXXFLAGS) -c ibis.cpp
+
+#thula.o: thula.cpp
+#	$(CXX) $(CXXFLAGS) -c thula.cpp
+#
+#ardea.o: ardea.cpp
+#	$(CXX) $(CXXFLAGS) -c ardea.cpp
+#
+#tcapi.o: tcapi.c
+#	$(CC) $(CFLAGS) -c tcapi.c
+
+run_$(TARGET):
+	../../run-sniper -n 2 -c gainestown-elp2im -d ./out-16-4-elp2im --power --roi -- ./main-cim > 16-4-elp2im.txt

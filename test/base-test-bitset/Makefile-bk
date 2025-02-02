@@ -1,0 +1,13 @@
+TARGET = base-test-bitset
+include ../shared/Makefile.shared
+CXX = g++ 
+CXXFLAGS = -g -O2 -mavx -fopt-info-vec-optimized 
+#CXXFLAGS += -std=c++11 -Wall -Wextra -Werror
+
+$(TARGET): $(TARGET).o 
+	$(CXX) $(CXXFLAGS) $(TARGET).o -lm $(SNIPER_LDFLAGS) -o $(TARGET) 
+
+run_$(TARGET):
+	#FIXME../../run-sniper -n 2 -c gainestown-ddr4-1866 -d ./out-15-12-ddr4-1866 --power --roi -- ./base-test-bitset > 15-12-ddr4-1866.txt
+	#FIXME../../run-sniper -n 2 -c gainestown-ddr4-2400 -d ./out-19-16-ddr4-2400 --power --roi -- ./base-test-bitset > 19-16-ddr4-2400.txt
+	#FIXME../../run-sniper -n 2 -c gainestown-ddr4-3200 -d ./out-15-12-ddr4-3200 --power --roi -- ./base-test-bitset > 15-12-ddr4-3200.txt
